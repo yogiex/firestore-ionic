@@ -1,4 +1,4 @@
-### Readme ionic with firebase authentication( type angular)
+### Readme ionic with firebase database( type angular)
 start dengan memulai project ionic 
 
 ```sh
