@@ -9,17 +9,21 @@ ionic start firebase-ionic --type=angular --capacitor
 Masuk ke website firebase
 ![](./img/Screenshot_20220322_105643.png)
 
-lalu pergi ke bagian console untuk membuat project
+Lalu pergi ke bagian console untuk membuat project
+
 ![](./img/Screenshot_20220322_105840.png)
 
-tambah project 
+Tambah project 
+
 ![](./img/Screenshot_20220322_105918.png)
 ![](./img/Screenshot_20220322_110033.png)
 
-disable google analytics
+Disable google analytics
+
 ![](./img/Screenshot_20220322_110107.png)
 
-jika sudah create project lalu tunggu project firebase dibuat
+Jika sudah create project lalu tunggu project firebase dibuat.
+
 ![](./img/Screenshot_20220322_110243.png)
 ![](./img/Screenshot_20220322_110331.png)
 
@@ -48,3 +52,20 @@ Import module @angular/fire pada app.module.ts
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore())
 ```
+
+### Tampilan UI
+Tampilan awal
+
+![](./img/Screenshot_20220322_213652.png)
+
+Tampilan tambah Note
+![](./img/Screenshot_20220322_213816.png)
+
+Tampilan detail note
+![](./img/Screenshot_20220322_213709.png)
+
+Tampilan delete note
+![](./img/Screenshot_20220322_213800.png)
+
+
+### End-to-End testing menggunakan cypress

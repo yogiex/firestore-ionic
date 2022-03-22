@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
+import { ModalPage } from '../modal/modal.page';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class HomePage {
   notes = [];
   constructor(
     private dataService: DataService,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private modalCtrl: ModalController  
   ) {
     this.dataService.getNotes().subscribe(res => {
       console.log(res)
@@ -19,8 +21,14 @@ export class HomePage {
     })
   }
 
-  openNote(note) {
-
+  async openNote(note) {
+    const modal = await this.modalCtrl.create({
+      component: ModalPage,
+      componentProps: { id: note.id },
+      breakpoints: [0, 0.5, 0.8],
+      initialBreakpoint: 0.6
+    })
+    modal.present()
   }
 
   async addNote(){
@@ -30,7 +38,7 @@ export class HomePage {
         {
           name: 'title',
           placeholder:'My cool note',
-          type: 'text'
+          type: 'text',
         },
         {
           name: 'text',
